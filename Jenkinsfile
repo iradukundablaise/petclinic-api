@@ -4,7 +4,8 @@ pipeline{
 	stages {
 		stage('Test Stage') {
 			steps {
-				echo 'Webhook received. This is a test stage.'
+				echo "🧪 Running tests..."
+				sh './mvnw clean test && \ echo "🎉 All tests passed!" || \ echo "❌ Tests failed!"'
 			}
 		}
 
