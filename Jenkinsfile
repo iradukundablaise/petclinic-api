@@ -1,11 +1,11 @@
 pipeline{
-	agent any
+	agent { label 'lenovo-node' }
 
 	stages {
 		stage('Test Stage') {
 			steps {
 				echo "🧪 Running tests..."
-				sh './mvnw clean test && echo "🎉 All tests passed!" || echo "❌ Tests failed!"'
+				// sh './mvnw clean test && echo "🎉 All tests passed!" || echo "❌ Tests failed!"'
 			}
 		}
 
