@@ -11,7 +11,11 @@ pipeline{
 
 		stage('Build Stage') {
 			steps {
-				echo 'This is a build stage.'
+				// Build a docker image and push to Docker Hub
+				echo '🚀 Building Docker image...'
+				sh 'docker build -t antonioblaise/petclinic:$BUILD_NUMBER .'
+				echo '📤 Pushing Docker image to Docker Hub...'
+				sh 'docker push antonioblaise/petclinic:$BUILD_NUMBER'
 			}
 		}
 
